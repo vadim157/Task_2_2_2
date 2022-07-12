@@ -16,13 +16,13 @@ public class CarServiceImpl implements CarService {
         this.carDAO = carDAO;
     }
 
-    @Override
-    public List<Car> showCars() {
-        return carDAO.showCars();
-    }
+//    @Override
+//    public List<Car> showCars() {
+//        return carDAO.showCars();
+//    }
 
     @Override
-    public List<Car> showCars(int count) {
+    public List<Car> showCars(Integer count) {
         return carDAO.showCars(count);
     }
 }

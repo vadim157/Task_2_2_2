@@ -19,17 +19,13 @@ public class CarDAOImpl implements CarDAO {
         carList.add(new Car("Mercedes-Benz", "E-Class", 197));
         carList.add(new Car("Volkswagen", "Touareg", 249));
     }
-    @Override
-    public List<Car> showCars() {
-        return carList;
-    }
 
     @Override
-    public List<Car> showCars(int count) {
-        List<Car> cars = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            cars.add(carList.get(i));
+    public List<Car> showCars(Integer count) {
+        if (count == null || count > carList.size()) {
+            return carList;
+        } else {
+            return carList.stream().limit(count).toList();
         }
-        return cars;
     }
 }
